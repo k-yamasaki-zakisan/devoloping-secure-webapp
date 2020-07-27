@@ -1,0 +1,16 @@
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        var req = new XMLHttpRequest();
+        req.open('GET', './33-002.php');
+        req.onreadystatechange = function() {
+            if(req.readyState == 4 &&req.status == 200) {
+                alert(req.responseText);
+            }
+        };
+        req.send(null);
+    </script>
+    送信しました
+</body>
