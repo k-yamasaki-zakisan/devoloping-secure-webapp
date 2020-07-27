@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>フレーム間の読み出し攻撃</title>
+
+    </head>
+    <body>
+        <iframe name="iframe1" width="300" height="80" src="./32-002.html"></iframe><br>
+        <input type="button" onclick="go()" value="パスワード→">
+        <script>
+            function go() {
+                try {
+                    var x = iframe1.document.form1.passwd.value;
+                    document.getElementById('out').textContent = x;
+                } catch(e) {
+                    alert(e.message);
+                }
+            }
+        </script>
+        <span id="out"></span>
+    </body>
+</html>
