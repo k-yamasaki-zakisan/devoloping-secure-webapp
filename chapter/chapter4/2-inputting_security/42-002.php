@@ -1,7 +1,7 @@
 <body>
     <?php
     $p = $GET['p'];
-    if(preg_match('[0-9]', $p) === FALSE) {
+    if(preg_match('/\A[a-z0-9]', $p) === FALSE) {
         die('整数を入れてください');
     }
     echo $p;
