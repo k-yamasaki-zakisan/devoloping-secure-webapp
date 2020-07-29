@@ -1,5 +1,5 @@
 <?php
-$dsn = "mysql:dbname=test; host=13306";
+$dsn = "mysql:dbname=test; host=localhost";
 $username = "test";
 $password = "test";
 $attr_emulate_prepares = array(PDO::ATTR_EMULATE_PREPARES => false);
@@ -14,6 +14,19 @@ try {
     die();
 }
 
-// require('../../db_connect.php');
-?>
 
+// require('../../db_connect.php');
+
+#dockerのDBコンテナにイン
+// docker exec -it docker_db_1 bash
+// mysql -u root -p test
+// root
+
+// CREATE TABLE test.users (
+//     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+//     name VARCHAR(50),
+//     email VARCHAR(50),
+//     password VARCHAR(50),
+//     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+// );
+?>
