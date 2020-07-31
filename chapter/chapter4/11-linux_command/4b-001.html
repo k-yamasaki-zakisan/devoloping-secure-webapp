@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OSコマンド攻撃</title>
+
+    </head>
+    <body>
+        <form action="4b-002.php" method="POST">
+            お問い合わせ<br>
+            メールアドレス<input type="text" name="mail"><br>
+            お問い合わせ<textarea name="input" col="20" rows="3"></textarea><br>
+            <input type="submit" value="通信">
+        </form>
+    </body>
+</html>
+
+<!-- メールアドレスにOSコマンドで攻撃：bob@example.jp;cat /etc/passwd -->
