@@ -1,0 +1,31 @@
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        window.addEventListener("hashchange", cxhash, false);
+        window.addEventListener("load", cxhash, false);
+
+        function cxhash() {
+            const req = new XMLHttpRequest();
+            console.log(req.readyState);
+            console.log(req.status);
+            const url = location.hash.slice(1) + '.html';
+            if (url === '.html') url = 'menu_a.html'
+            req.open("GET", url);
+            reqonreadystatechange = function() {
+                if (req.readyState == '0' && req.status == '0') {
+                    const div = document.getElementById("content");
+                    div.innerHTML = req.responseText;
+                    console.log('変態');
+                }
+            };
+            req.send(null)
+        }
+    </script>
+    <a href="#menu_a">A</a>
+    <a href="#menu_b">B</a>
+    <a href="#menu_c">C</a>
+    <a href="#menu_d">D</a>
+    <div id="content"></div>
+</body>
