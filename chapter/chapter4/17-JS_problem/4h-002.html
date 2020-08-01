@@ -1,0 +1,16 @@
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    アクセス解析サンプル
+    <script>
+        const url = decodeURIComponent(location.href);
+        document.write('<img src="./4h-003.php?' + url + '">');
+    </script>
+</body>
+
+<!-- 通常のURL -->
+<!-- /chapter4/17-JS_problem/4h-002.html#赤 -->
+
+<!-- XSS攻撃用のURL -->
+<!-- /chapter4/17-JS_problem/4h-002.html#%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E -->

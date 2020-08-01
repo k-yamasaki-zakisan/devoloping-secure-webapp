@@ -1,0 +1,25 @@
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        window.addEventListener("hashchange", chghash, false);
+        window.addEventListener("load", chghash, false);
+
+        function chghash() {
+            const hash = decodeURIComponent(window.location.hash.slice(1));
+            const color = document.getElementById("color");
+            color.innerHTML = hash;
+        }
+    </script>
+    <a href="#赤">赤</a>
+    <a href="#青">青</a>
+    <a href="#緑">緑</a>
+    <p id="color"></p>
+</body>
+
+<!-- 通常のURL -->
+<!-- /chapter4/17-JS_problem/4h-001.html#赤 -->
+
+<!-- XSS攻撃用のURL -->
+<!-- /chapter4/17-JS_problem/4h-001.html#<img src=/ onerror=alert(1)> -->
